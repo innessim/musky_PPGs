@@ -26,4 +26,11 @@ This README_OGPV.txt file was generated on 2025-06-28 by Simon Innes.
 
 4. Geographic location of data collection: see musky_monk_env.csv & Kooyers_et_al_2017_simplified.csv
 
-5. 
+5. Funding: This work was funded by a National Science Foundation CAREER grant (DEB-2045643) awarded to NJK.
+
+### DATA AND FILE OVERVIEW
+
+1. File list:
+
+&emsp;&emsp;&ensp; File 1: 
+
