@@ -30,11 +30,77 @@ This README_OGPV.txt file was generated on 2025-06-28 by Simon Innes.
 
 ### DATA AND FILE OVERVIEW
 
-1. File list:
+1. File list: \
+&ensp; File 1: "Musky_PPG_conc.csv" \
+&emsp; Description: 
 
-&emsp;&emsp;&ensp; File 1: "Musky_PPG_conc.csv" \
+&emsp;&emsp;&ensp; File 2: "musky_monk_env.csv" \
+&emsp;&emsp;&ensp;&ensp; Description: 
+
+&emsp;&emsp;&ensp; File 3: "mos_gutt_pops.csv" \
+&emsp;&emsp;&ensp;&ensp; Description: 
+
+&emsp;&emsp;&ensp; File 4: "Kooyers_et_al_2017_simplified.csv" \
 &emsp;&emsp;&ensp;&ensp; Description: 
 
 
 #### DATA SPECIFIC INFORMATION FOR: "Musky_PPG_conc.csv"
+
+1. Number of variables: 
+
+2. Number of cases/rows: 
+
+3. Variable List: \
+
+
+4. Missing data codes: \
+&ensp; none
+
+5. Specialized formats or other abbreviations used: \
+
+
+#### DATA SPECIFIC INFORMATION FOR: "musky_monk_env.csv"
+
+1. Number of variables: 
+
+2. Number of cases/rows: 
+
+3. Variable List: \
+
+
+4. Missing data codes: \
+&ensp; none
+
+5. Specialized formats or other abbreviations used: \
+
+
+#### DATA SPECIFIC INFORMATION FOR: "mos_gutt_pops.csv"
+
+1. Number of variables: 
+
+2. Number of cases/rows: 
+
+3. Variable List: \
+
+
+4. Missing data codes: \
+&ensp; none
+
+5. Specialized formats or other abbreviations used: \
+
+
+#### DATA SPECIFIC INFORMATION FOR: "Kooyers_et_al_2017_simplified.csv"
+
+1. Number of variables: 
+
+2. Number of cases/rows: 
+
+3. Variable List: \
+
+
+4. Missing data codes: \
+&ensp; none
+
+5. Specialized formats or other abbreviations used: \
+
 
