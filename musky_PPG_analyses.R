@@ -850,51 +850,6 @@ chem_df %>%
 ########
 
 ## supplement ####
-#### plot arrows of NMDS with ggplot (Figure S1) ####
-
-# Define the desired order of PPGs
-PPG_order_FigS1 <- c("Calc A",
-                  "Conand",
-                  "Verb",
-                  "Calc B",
-                  "Mimulo",
-                  "Unkn 16",
-                  "PPG b",
-                  "PPG c",
-                  "PPG d",
-                  "PPG e",
-                  "PPG f",
-                  "PPG g",
-                  "PPG h")
-
-# make the df from vegan output
-NMDS_sum <- cbind(PPGs = rownames(NMDS_scores),
-                  NMDS1 = ef$vectors$arrows[ ,1], 
-                  NMDS2 = ef$vectors$arrows[ ,2],
-                  r2 = ef$vectors$r, 
-                  p = ef$vectors$pvals) %>% 
-  as.data.frame() %>%
-  mutate(across(NMDS1:p, .fns = as.numeric)) %>%
-  mutate(NMDS1 = NMDS1*sqrt(r2)) %>%
-  mutate(NMDS2 = NMDS2*sqrt(r2)) %>% 
-  mutate(PPGs = factor(PPGs, levels = reorder_PPGs)) %>%
-  arrange(PPGs)
-
-# the plot
-ggplot(NMDS_sum, aes(x = NMDS1, y = NMDS2)) + 
-  geom_hline(yintercept = 0, linetype = "dashed", size = 0.75) +
-  geom_vline(xintercept = 0, linetype = "dashed", size = 0.75) +
-  ng1 +
-  labs(x = "NMDS1", y = "NMDS2", size = 5) +
-  coord_cartesian(xlim = c(-1, 1), ylim = c(-1, 1)) +
-  geom_segment(data = NMDS_sum, aes(x = 0, y = 0, xend = NMDS1, yend = NMDS2),
-               arrow = arrow(length = unit(1/2, "picas")), color = "black") +
-  geom_text_repel(data = NMDS_sum %>% filter(p < 0.05), aes(x = NMDS1, y = NMDS2, label = PPGs), fontface = "bold",
-                  size = 5, point.padding = 1.5) +
-  geom_text_repel(data = NMDS_sum %>% filter(p > 0.05), aes(x = NMDS1, y = NMDS2, label = PPGs),
-                  size = 5, point.padding = 1.5) 
-
-
 #### Table of means and SDs for each PPG by population (Table S1) ####
 # calculate means and SD for each PPG across pops and ontogeny
 PPG_mean_SD <- chem_env %>%
@@ -991,6 +946,51 @@ print(formatted_df, row.names = FALSE)
 
 # Write to CSV
 write_csv(formatted_df, file = "PPGs/for_manuscript/PPG_cor_table.csv")
+
+
+#### plot arrows of NMDS with ggplot (Figure S1) ####
+
+# Define the desired order of PPGs
+PPG_order_FigS1 <- c("Calc A",
+                     "Conand",
+                     "Verb",
+                     "Calc B",
+                     "Mimulo",
+                     "Unkn 16",
+                     "PPG b",
+                     "PPG c",
+                     "PPG d",
+                     "PPG e",
+                     "PPG f",
+                     "PPG g",
+                     "PPG h")
+
+# make the df from vegan output
+NMDS_sum <- cbind(PPGs = rownames(NMDS_scores),
+                  NMDS1 = ef$vectors$arrows[ ,1], 
+                  NMDS2 = ef$vectors$arrows[ ,2],
+                  r2 = ef$vectors$r, 
+                  p = ef$vectors$pvals) %>% 
+  as.data.frame() %>%
+  mutate(across(NMDS1:p, .fns = as.numeric)) %>%
+  mutate(NMDS1 = NMDS1*sqrt(r2)) %>%
+  mutate(NMDS2 = NMDS2*sqrt(r2)) %>% 
+  mutate(PPGs = factor(PPGs, levels = reorder_PPGs)) %>%
+  arrange(PPGs)
+
+# the plot
+ggplot(NMDS_sum, aes(x = NMDS1, y = NMDS2)) + 
+  geom_hline(yintercept = 0, linetype = "dashed", size = 0.75) +
+  geom_vline(xintercept = 0, linetype = "dashed", size = 0.75) +
+  ng1 +
+  labs(x = "NMDS1", y = "NMDS2", size = 5) +
+  coord_cartesian(xlim = c(-1, 1), ylim = c(-1, 1)) +
+  geom_segment(data = NMDS_sum, aes(x = 0, y = 0, xend = NMDS1, yend = NMDS2),
+               arrow = arrow(length = unit(1/2, "picas")), color = "black") +
+  geom_text_repel(data = NMDS_sum %>% filter(p < 0.05), aes(x = NMDS1, y = NMDS2, label = PPGs), fontface = "bold",
+                  size = 5, point.padding = 1.5) +
+  geom_text_repel(data = NMDS_sum %>% filter(p > 0.05), aes(x = NMDS1, y = NMDS2, label = PPGs),
+                  size = 5, point.padding = 1.5) 
 
 
 #### get table of how much variance is explained for each NMDS axis (Table S3) ####
