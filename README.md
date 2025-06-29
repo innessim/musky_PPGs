@@ -22,7 +22,7 @@ This README_OGPV.txt file was generated on 2025-06-28 by Simon Innes.
 &emsp;&emsp;&ensp;&ensp; Name: Nicholas Kooyers \
 &emsp;&emsp;&ensp;&ensp; Institution: University of Louisiana at Lafayette 
 
-3. Date of data collection: 2008-2018
+3. Date of data collection: 2021
 
 4. Geographic location of data collection: see musky_monk_env.csv & Kooyers_et_al_2017_simplified.csv
 
@@ -32,5 +32,9 @@ This README_OGPV.txt file was generated on 2025-06-28 by Simon Innes.
 
 1. File list:
 
-&emsp;&emsp;&ensp; File 1: 
+&emsp;&emsp;&ensp; File 1: "Musky_PPG_conc.csv" \
+&emsp;&emsp;&ensp;&ensp; Description: 
+
+
+#### DATA SPECIFIC INFORMATION FOR: "Musky_PPG_conc.csv"
 
