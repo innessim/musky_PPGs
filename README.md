@@ -94,43 +94,77 @@ This README_OGPV.txt file was generated on 2025-06-28 by Simon Innes.
 &ensp; elevation_m: \
 &ensp; range: 
 
-
-5. Missing data codes: \
+4. Missing data codes: \
 &ensp; none
 
-6. Specialized formats or other abbreviations used: \
+5. Specialized formats or other abbreviations used: \
 &ensp; pop: Population \
 &ensp; num: Number \
-&ensp; m: Metre
+&ensp; m: Meter
 
 
 #### DATA SPECIFIC INFORMATION FOR: "mos_gutt_pops.csv"
 
-1. Number of variables: 
+1. Number of variables: 4
 
-2. Number of cases/rows: 
+2. Number of cases/rows: 38
 
 3. Variable List: \
-
+&ensp; pop: \
+&ensp; lat: \
+&ensp; long: \
+&ensp; species: 
 
 4. Missing data codes: \
 &ensp; none
 
 5. Specialized formats or other abbreviations used: \
+&ensp; pop: Population \
+&ensp; lat: Latitude \
+&ensp; long: Longitude \
+&ensp; mos: <i>Mimulus moschatus</i> \
+&ensp; gutt: <i>Mimulus guttatus</i>
 
 
 #### DATA SPECIFIC INFORMATION FOR: "Kooyers_et_al_2017_simplified.csv"
 
-1. Number of variables: 
+1. Number of variables: 15
 
-2. Number of cases/rows: 
+2. Number of cases/rows: 23
 
 3. Variable List: \
+&ensp; pop_name: \
+&ensp; ind: \
+&ensp; rep: \
+&ensp; Calc A: \
+&ensp; Conand: \
+&ensp; Verb: \
+&ensp; Calc B: \
+&ensp; Mimulo: \
+&ensp; Unkn 16: \
+&ensp; Total PPGs: \
+&ensp; latitude: \
+&ensp; longitude: \
+&ensp; elevation_m: \
+&ensp; species: \
+&ensp; range:
 
 
 4. Missing data codes: \
 &ensp; none
 
 5. Specialized formats or other abbreviations used: \
-
+&ensp; pop: Population \
+&ensp; ind: Individual \
+&ensp; rep: Replicate \
+&ensp; Calc A: Calceolarioside A \
+&ensp; Conand: Conandroside \
+&ensp; Verb: Verbascoside \
+&ensp; Calc B: Calceolarioside B \
+&ensp; Mimulo: Mimuloside \
+&ensp; Unkn 16: Unkown phenylpropanoid glycoside 16 \
+&ensp; PPGs: Phenylpropanoid glycosides \
+&ensp; m: Meter \
+&ensp; mos: <i>Mimulus moschatus</i> \
+&ensp; gutt: <i>Mimulus guttatus</i>
 
