@@ -254,12 +254,12 @@ chem_df %>%
 ### find closest mos and gutt pops for each region ####
 
 # Load df of coordinates of current study M. moschatus pops and Kooyers et al 2017 M. guttatus pops
-df <- read_csv("PPGs/for_manuscript/mos_gutt_PPG_pops.csv")
+mos_gutt_pops <- read_csv("PPGs/for_manuscript/mos_gutt_PPG_pops.csv")
 
 
 # Step 1: Separate the *mos* and *gutt* populations
-mos_pops <- df %>% filter(species == "mos")
-gutt_pops <- df %>% filter(species == "gutt")
+mos_pops <- mos_gutt_pops %>% filter(species == "mos")
+gutt_pops <- mos_gutt_pops %>% filter(species == "gutt")
 
 # Step 2: Create a matrix of coordinates for each group
 mos_coords <- mos_pops %>% select(long, lat) %>% as.matrix()
