@@ -46,17 +46,38 @@ This README_OGPV.txt file was generated on 2025-06-28 by Simon Innes.
 
 #### DATA SPECIFIC INFORMATION FOR: "Musky_PPG_conc.csv"
 
-1. Number of variables: 
+1. Number of variables: 15
 
-2. Number of cases/rows: 
+2. Number of cases/rows: 48
 
 3. Variable List: \
-
+&ensp; Sample Name: \
+&ensp; PPG b: \
+&ensp; PPG c: \
+&ensp; PPG d: \
+&ensp; PPG e: \
+&ensp; PPG f: \
+&ensp; PPG g: \
+&ensp; PPG h: \
+&ensp; Calc A: \
+&ensp; Conand: \
+&ensp; Verb: \
+&ensp; Calc B: \
+&ensp; Mimulo: \
+&ensp; Unkn 16: \
+&ensp; Total PPGs:
 
 4. Missing data codes: \
 &ensp; none
 
 5. Specialized formats or other abbreviations used: \
+&ensp; Calc A: Calceolarioside A \
+&ensp; Conand: Conandroside \
+&ensp; Verb: Verbascoside \
+&ensp; Calc B: Calceolarioside B \
+&ensp; Mimulo: Mimuloside \
+&ensp; Unkn 16: Unkown phenylpropanoid glycoside 16 \
+&ensp; PPGs: Phenylpropanoid glycosides
 
 
 #### DATA SPECIFIC INFORMATION FOR: "musky_monk_env.csv"
