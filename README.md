@@ -82,17 +82,26 @@ This README_OGPV.txt file was generated on 2025-06-28 by Simon Innes.
 
 #### DATA SPECIFIC INFORMATION FOR: "musky_monk_env.csv"
 
-1. Number of variables: 
+1. Number of variables: 6
 
-2. Number of cases/rows: 
+2. Number of cases/rows: 3
 
 3. Variable List: \
+&ensp; pop_name: \
+&ensp; pop_num: \
+&ensp; latitude: \
+&ensp; longitude: \
+&ensp; elevation_m: \
+&ensp; range: 
 
 
-4. Missing data codes: \
+5. Missing data codes: \
 &ensp; none
 
-5. Specialized formats or other abbreviations used: \
+6. Specialized formats or other abbreviations used: \
+&ensp; pop: Population \
+&ensp; num: Number \
+&ensp; m: Metre
 
 
 #### DATA SPECIFIC INFORMATION FOR: "mos_gutt_pops.csv"
