@@ -128,7 +128,7 @@ This README_OGPV.txt file was generated on 2025-06-28 by Simon Innes.
 
 #### DATA SPECIFIC INFORMATION FOR: "Kooyers_et_al_2017_simplified.csv"
 
-1. Number of variables: 15
+1. Number of variables: 16
 
 2. Number of cases/rows: 23
 
@@ -136,6 +136,7 @@ This README_OGPV.txt file was generated on 2025-06-28 by Simon Innes.
 &ensp; pop_name: \
 &ensp; ind: \
 &ensp; rep: \
+&ensp; Unkn 10: \
 &ensp; Calc A: \
 &ensp; Conand: \
 &ensp; Verb: \
@@ -150,10 +151,10 @@ This README_OGPV.txt file was generated on 2025-06-28 by Simon Innes.
 &ensp; range:
 
 
-4. Missing data codes: \
+5. Missing data codes: \
 &ensp; none
 
-5. Specialized formats or other abbreviations used: \
+6. Specialized formats or other abbreviations used: \
 &ensp; pop: Population \
 &ensp; ind: Individual \
 &ensp; rep: Replicate \
