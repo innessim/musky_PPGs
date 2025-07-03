@@ -1,6 +1,8 @@
 #########################################################
 #                       musky PPGs                      #
 #########################################################
+# Put files in directory /PPGs/for_manuscript.
+
 
 ## libraries required ####
 options(contrasts = c("contr.sum", "contr.poly"))
@@ -72,7 +74,8 @@ ng2 <- theme(aspect.ratio=0.7,panel.background = element_blank(),
 
 # concentrations of PPGs
 chems <- read_csv("PPGs/for_manuscript/Musky_PPG_conc.csv") # inds are from different planting than cg1 & cg2
-                                                            # each line and rep combination is a unique maternal line
+# each line and rep combination is a unique maternal line
+
 chem_vals <- select(chems, `PPG b`:`Unkn 16`) %>% 
   as.matrix()
 
@@ -185,8 +188,7 @@ as.data.frame(PPG_pop_develop_leaf_pair)
 
 #### Total PPGs (Figure 2) ####
 chem_df %>%
-  mutate(range = fct_reorder(range, -latitude),
-         pop_name = factor(pop_name, levels = c("CJC", "SRN", "TAB")),
+  mutate(pop_name = factor(pop_name, levels = c("CJC", "SRN", "TAB")),
          pop_name_legend = factor(pop_name, levels = c("TAB", "SRN", "CJC")),
          leaf_pair = factor(dplyr::recode(leaf_pair, "3" = "Early", "8" = "Late"), levels = c("Early", "Late"))) %>%
   ggplot(aes(x = pop_name, y = `Total PPGs`, fill = pop_name_legend, linetype = leaf_pair)) + 
@@ -195,10 +197,12 @@ chem_df %>%
   labs(x = "Population",
        y = "Total PPGs (mg/g)",
        fill = "Population",
-       linetype = "Development",
-       shape = "Development") +
+       linetype = "Ontogeny",
+       shape = "Ontogeny") +
   scale_fill_manual(values = c("TAB" = "#66C2A5", "SRN" = "#FFD92F", "CJC" = "#E5C494")) +
-  ng1
+  ng1 +
+    theme(legend.text = element_text(hjust = 0),
+          legend.title = element_text(hjust = 0))
 
 
 ### how do NMDS axes change through development and population ####
@@ -242,11 +246,13 @@ chem_df %>%
   geom_vline(xintercept = 0, linetype = "dashed", linewidth = 0.75) + 
   geom_point(aes(colour = pop_name, shape = leaf_pair), size = 2.5) + 
   geom_line(aes(group = ID, colour = pop_name)) +
-  labs(x = "NMDS1", y = "NMDS2", colour = "Population", shape = "Development") +
+  labs(x = "NMDS1", y = "NMDS2", colour = "Population", shape = "Ontogeny") +
   stat_ellipse(aes(colour = pop_name), size = 0.75) +
   scale_colour_manual(values = c("#66C2A5", "#FFD92F", "#E5C494")) +
   scale_y_continuous(labels = label_number(accuracy = 0.1)) +
-  ng1
+  ng1 +
+  theme(legend.text = element_text(hjust = 0),
+        legend.title = element_text(hjust = 0))
 
 
 ## congeneric comparison ####
@@ -262,8 +268,8 @@ mos_pops <- mos_gutt_pops %>% filter(species == "mos")
 gutt_pops <- mos_gutt_pops %>% filter(species == "gutt")
 
 # Step 2: Create a matrix of coordinates for each group
-mos_coords <- mos_pops %>% select(long, lat) %>% as.matrix()
-gutt_coords <- gutt_pops %>% select(long, lat) %>% as.matrix()
+mos_coords <- mos_pops %>% select(longitude, latitude) %>% as.matrix()
+gutt_coords <- gutt_pops %>% select(longitude, latitude) %>% as.matrix()
 
 # Step 3: Calculate the distances between each *mos* population and all *gutt* populations
 # Each row represents a *gutt* population, and each column represents a *mos* population
@@ -280,33 +286,34 @@ for (i in 1:ncol(dist_matrix)) {
   # Get the indices of the top 3 closest `gutt` populations
   closest_indices <- order(distances)[1:3]
   
+  # Get elevation for mos and corresponding gutt populations 
+  mos_elev <- mos_pops$elevation_m[i]
+  gutt_elevs <- gutt_pops$elevation_m[closest_indices]
+  
   # Create a data frame with the results for this `mos` population
   temp_df <- data.frame(
-    mos_population = rep(mos_pops$pop[i], 3),  # Current `mos` population
-    closest_gutt_population = gutt_pops$pop[closest_indices],  # Closest `gutt` populations
-    Distance = distances[closest_indices]  # Corresponding distances
+    mos_population = rep(mos_pops$pop_name[i], 3),  # Current `mos` population
+    closest_gutt_population = gutt_pops$pop_name[closest_indices],  # Closest `gutt` populations
+    Distance = distances[closest_indices] / 1000,  # Corresponding distances in km
+    Elevation_diff_m = abs(gutt_elevs - mos_elev) 
   )
   
   # Add to the final data frame
   closest_three_gutt <- rbind(closest_three_gutt, temp_df)
 }
 
-# Step 5: View the result
-as_tibble(closest_three_gutt %>% mutate(Distance = Distance/1000))
+# Step 5: View results
+as_tibble(closest_three_gutt)
 
 # went with HAC for TAB (17.9 km), YVO for SRN (89.7 km) and NAD for CJC (53.1 km)
-# elevations - HAC: 1258, TAB : 1440; YVO: 1495, SRN: 1232; NAD: 1689, CJC: 1807
-
-1440 - 1258 # 182
-1495 - 1232 # 263
-1807 - 1689 # 118
+# elevations - HAC: 1285, TAB : 1440; YVO: 1495, SRN: 1232; NAD: 1689, CJC: 1807
 
 
 #### stats tests for congeneric comparison ####
 
 # import data and manipulate
 # Kooyers et al. 2017 (ran with full data frame NOT included in data repository)
-gutt_con_df <- read_csv("PPGs/ppg_r_noDKR6.csv") %>% 
+gutt_PPG_df <- read_csv("PPGs/ppg_r_noDKR6.csv") %>% 
   filter(induction == "c") %>%  # remove induced defenses
   filter(Population %in% c("NAD", "YVO", "HAC")) %>% 
   mutate(species = "gutt") %>% 
@@ -327,17 +334,18 @@ gutt_con_df <- read_csv("PPGs/ppg_r_noDKR6.csv") %>%
   ungroup() %>% 
   distinct(pop_name, Line, .keep_all = TRUE) %>% 
   rename(ind = Line,
-         rep = Ind) %>% 
-  select(-Flat:-Pos, -LineNum, -Flowerdate:-`Unkn 10`, -Cline:-`C stable isotope ratio`, -july_pet:-transect) %>% 
+         rep = Ind) %>%
+  select(-Flat:-Pos, -LineNum, -Flowerdate:-dryweight, -Cline:-`C stable isotope ratio`, -july_pet:-transect) %>% 
   mutate(range = case_when(pop_name == "NAD" ~ "Sequoia",
                            pop_name == "YVO" ~ "Sierra",
                            pop_name == "HAC" ~ "Willamette"))
 
-# writing out simplified data frame for data repository
-write_csv(gutt_con_df, file = "PPGs/for_manuscript/Kooyers_et_al_2017_simplified.csv")
+# writing out simplified data frame for data repository ### i kept uknk 10 here so i can use the same df below for the figure and to make the means file without need to have an ambiguous df of means
+write_csv(gutt_PPG_df, file = "PPGs/for_manuscript/Kooyers_et_al_2017_simplified.csv")
 
 # import simplified data frame from Kooyers et al. 2017 included in data repository
-gutt_con_df <- read_csv("PPGs/for_manuscript/Kooyers_et_al_2017_simplified.csv")
+gutt_con_df <- read_csv("PPGs/for_manuscript/Kooyers_et_al_2017_simplified.csv") %>% 
+  select(-`Unkn 10`)
 
 # current study
 mos_con_df <- chem_df %>% 
@@ -373,31 +381,23 @@ Anova(reL_conand_mosgutt, type = 3)
 ### to make a plot ####
 ##### make df with means of both species ####
 
-# Load dfs
-gutt_PPG_means <- read_csv("PPGs/gutt_PPG_means.csv") %>%
-  rename(elevation_m = elev_m) %>%
-  select(pop_name:elevation_m) %>%
+# Calculate means and standard deviations for gutt
+gutt_PPG_means <- gutt_PPG_df %>% 
+group_by(pop_name) %>%
+  summarise(across(`Unkn 10`:`Total PPGs`,
+                   list(mean = ~ mean(., na.rm = TRUE),
+                        sd = ~ sd(., na.rm = TRUE)),
+                   .names = "{col}_{fn}"),
+            N = n()) %>%
+  ungroup() %>%
   mutate(species = "gutt")
 
-# levels of mos PPGs
-chems <- read_csv("PPGs/Musky_PPG_conc.csv") # inds are from different planting than cg1 & cg2
-
-# env data
-musky_monk_master <- read_csv("musky_monk_master/musky_monk_env.csv") %>%
-  mutate(pop_num = as.character(pop_num))
-
-# adding env vars
-mos_PPG_raw <- chems %>%
-  separate(`Sample Name`, c("pop_num", "ind", "rep", "leaf_pair")) %>%
-  unite("ID", c("pop_num", "ind", "rep"), remove = FALSE) %>%
-  left_join(., select(musky_monk_master, pop_name:range), by = "pop_num")
-
-# Filter the data for leaf_pair = 3 and exclude unnecessary columns
-filtered_mos_PPG_raw <- mos_PPG_raw %>%
+# remove later leaves and remove unecessary columns
+filtered_mos_PPG_raw <- chem_df %>%
   filter(leaf_pair == 3) %>%
-  select(-elevation_ft, -ID, -pop_num, -ind, -rep, -leaf_pair)
+  select(-ID, -pop_num, -ind, -rep, -leaf_pair)
 
-# Calculate means and standard deviations
+# Calculate means and standard deviations for mos
 mos_PPG_means <- filtered_mos_PPG_raw %>%
   group_by(pop_name) %>%
   summarise(across(`PPG b`:`Total PPGs`,
@@ -424,7 +424,7 @@ combined_PPG_df_se <- combined_PPG_df %>%
                 ~ . / sqrt(N), 
                 .names = "{sub('_sd$', '_se', col)}"))
 
-# List of mean columns from your specified range
+# List of mean columns from specified range
 mean_columns <- c("PPG b_mean", "PPG c_mean", "PPG d_mean", "PPG e_mean",
                   "PPG f_mean", "PPG g_mean", "PPG h_mean", "Calc A_mean", 
                   "Conand_mean", "Verb_mean", "Unkn 10_mean", "Calc B_mean", 
@@ -439,7 +439,7 @@ combined_PPG_df_long <- combined_PPG_df_se %>%
                values_to = "value") %>%                                # Store these values in "value"
   pivot_wider(names_from = "stat", values_from = "value") %>%          # Separate into "mean" and "se" columns
   group_by(pop_name, range) %>%                                        # Keep "range" intact for each pop_name
-  slice_max(mean, n = 3) %>%                                           # Get top 4 mean values per population
+  slice_max(mean, n = 3) %>%                                           # Get top 3 mean values per population 
   ungroup()
 
 # Define custom colors for the populations
