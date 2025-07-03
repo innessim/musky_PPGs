@@ -105,23 +105,23 @@ This README_OGPV.txt file was generated on 2025-06-28 by Simon Innes.
 
 #### DATA SPECIFIC INFORMATION FOR: "mos_gutt_pops.csv"
 
-1. Number of variables: 4
+1. Number of variables: 5
 
 2. Number of cases/rows: 38
 
 3. Variable List: \
-&ensp; pop: \
-&ensp; lat: \
-&ensp; long: \
+&ensp; pop_name: \
+&ensp; latitude: \
+&ensp; longitude: \
+&ensp; elevation_m: \
 &ensp; species: 
 
-4. Missing data codes: \
+5. Missing data codes: \
 &ensp; none
 
-5. Specialized formats or other abbreviations used: \
+6. Specialized formats or other abbreviations used: \
 &ensp; pop: Population \
-&ensp; lat: Latitude \
-&ensp; long: Longitude \
+&ensp; m: Meter
 &ensp; mos: <i>Mimulus moschatus</i> \
 &ensp; gutt: <i>Mimulus guttatus</i>
 
