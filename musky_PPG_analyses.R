@@ -102,7 +102,9 @@ NMDS.scree(chem_dis) # two dimensions appear to be sufficient
 chem_env <- chems %>% 
   separate(`Sample Name`, c("pop_num", "ind", "rep", "leaf_pair")) %>% 
   unite("ID", c("pop_num", "ind", "rep"), remove = FALSE) %>% 
-  left_join(., select(musky_monk_master, pop_name:range), by = "pop_num")
+  left_join(., musky_monk_master %>% 
+              filter(pop_name %in% c("CJC", "SRN", "TAB")) %>% 
+              select( pop_name:range), by = "pop_num")
 
 
 
@@ -247,7 +249,7 @@ chem_df %>%
   geom_point(aes(colour = pop_name, shape = leaf_pair), size = 2.5) + 
   geom_line(aes(group = ID, colour = pop_name)) +
   labs(x = "NMDS1", y = "NMDS2", colour = "Population", shape = "Ontogeny") +
-  stat_ellipse(aes(colour = pop_name), size = 0.75) +
+  stat_ellipse(aes(colour = pop_name), linewidth = 0.75) +
   scale_colour_manual(values = c("#66C2A5", "#FFD92F", "#E5C494")) +
   scale_y_continuous(labels = label_number(accuracy = 0.1)) +
   ng1 +
@@ -306,7 +308,7 @@ for (i in 1:ncol(dist_matrix)) {
 as_tibble(closest_three_gutt)
 
 # went with HAC for TAB (17.9 km), YVO for SRN (89.7 km) and NAD for CJC (53.1 km)
-# elevations - HAC: 1285, TAB : 1440; YVO: 1495, SRN: 1232; NAD: 1689, CJC: 1807
+# elevations - HAC: 1285, TAB: 1440; YVO: 1495, SRN: 1232; NAD: 1689, CJC: 1807
 
 
 #### stats tests for congeneric comparison ####
@@ -340,12 +342,14 @@ gutt_PPG_df <- read_csv("PPGs/ppg_r_noDKR6.csv") %>%
                            pop_name == "YVO" ~ "Sierra",
                            pop_name == "HAC" ~ "Willamette"))
 
-# writing out simplified data frame for data repository ### i kept uknk 10 here so i can use the same df below for the figure and to make the means file without need to have an ambiguous df of means
+# writing out simplified data frame for data repository ### i kept Unkn 10 here for figure 4
 write_csv(gutt_PPG_df, file = "PPGs/for_manuscript/Kooyers_et_al_2017_simplified.csv")
 
 # import simplified data frame from Kooyers et al. 2017 included in data repository
 gutt_con_df <- read_csv("PPGs/for_manuscript/Kooyers_et_al_2017_simplified.csv") %>% 
-  select(-`Unkn 10`)
+  select(-`Unkn 10`) # without Unkn 10
+
+gutt_PPG_df <- read_csv("PPGs/for_manuscript/Kooyers_et_al_2017_simplified.csv") # with Unkn10
 
 # current study
 mos_con_df <- chem_df %>% 
@@ -870,7 +874,7 @@ PPG_mean_SD <- chem_env %>%
   summarise(across(`PPG b`:`Total PPGs`, list(mean = mean, sd = sd), 
                    .names = "{.col}_{.fn}"), .groups = "drop")
 
-write_csv(PPG_mean_SD, file = "PPGs/for_manuscript/PPG_mean_SD.csv")
+write_csv(PPG_mean_SD, file = "PPGs/for_manuscript/PPG_mean_SD_TableS1.csv")
 
 
 #### Table of correlations between PPGs (Table S2) ####
@@ -935,17 +939,17 @@ formatted_df <- as.data.frame(formatted_table)
 # Ensure the order is preserved
 formatted_df <- formatted_df %>%
   rownames_to_column(var = "PPG") %>%
-  arrange(factor(PPG, levels = ppg_order))  # Reorder rows
+  arrange(factor(PPG, levels = PPG_order_TableS2))  # Reorder rows
 
 # Reorder columns as well
 formatted_df <- formatted_df %>%
-  select(PPG, all_of(ppg_order))
+  select(PPG, all_of(PPG_order_TableS2))
 
 # Print the formatted table
 print(formatted_df, row.names = FALSE)
 
 # Write to CSV
-write_csv(formatted_df, file = "PPGs/for_manuscript/PPG_cor_table.csv")
+write_csv(formatted_df, file = "PPGs/for_manuscript/PPG_cor_TableS2.csv")
 
 
 #### plot arrows of NMDS with ggplot (Figure S1) ####
@@ -975,7 +979,7 @@ NMDS_sum <- cbind(PPGs = rownames(NMDS_scores),
   mutate(across(NMDS1:p, .fns = as.numeric)) %>%
   mutate(NMDS1 = NMDS1*sqrt(r2)) %>%
   mutate(NMDS2 = NMDS2*sqrt(r2)) %>% 
-  mutate(PPGs = factor(PPGs, levels = reorder_PPGs)) %>%
+  mutate(PPGs = factor(PPGs, levels = PPG_order_FigS1)) %>%
   arrange(PPGs)
 
 # the plot
@@ -1022,14 +1026,18 @@ NMDS_sum <- cbind(PPGs = rownames(NMDS_scores),
   mutate(PPGs = factor(PPGs, levels = PPG_order_TableS3)) %>%
   arrange(PPGs)
 
-write_csv(NMDS_sum, file = "PPGs/for_manuscript/PPG_NMDS_var.csv")
+write_csv(NMDS_sum, file = "PPGs/for_manuscript/PPG_NMDS_var_TableS3.csv")
 
 
+#### table with geographic locations and environmental variables for mos and gutt (Table S4) ####
 
+PPG_mos_gutt_env <- read_csv("PPGs/for_manuscript/musky_monk_env.csv") %>% 
+  mutate(pop_num = as.character(pop_num)) %>% 
+  mutate(species = case_when(pop_name %in% c("CJC", "SRN", "TAB") ~ "mos",
+                             pop_name %in% c("NAD", "YVO", "HAC") ~ "gutt")) %>% 
+  relocate(species, .after = range)
 
-
-
-
+write_csv(PPG_mos_gutt_env, file = "PPGs/for_manuscript/PPG_mos_gutt_env_TableS4.csv")
 
 
 #####
