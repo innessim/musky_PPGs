@@ -32,16 +32,16 @@ This README_OGPV.txt file was generated on 2025-06-28 by Simon Innes.
 
 1. File list: \
 &ensp; File 1: "Musky_PPG_conc.csv" \
-&emsp; Description: 
+&emsp; Description: Raw data of total and individual PPG concentrations for each <i>Mimulus moschatus</i> sample.
 
 &emsp;&emsp;&ensp; File 2: "musky_monk_env.csv" \
-&emsp;&emsp;&ensp;&ensp; Description: 
+&emsp;&emsp;&ensp;&ensp; Description: Geographic locations and climate variables for sampled <i>Mimulus moschatus</i> populations.
 
 &emsp;&emsp;&ensp; File 3: "mos_gutt_pops.csv" \
-&emsp;&emsp;&ensp;&ensp; Description: 
+&emsp;&emsp;&ensp;&ensp; Description: Geographic locations of <i>Mimulus guttatus</i> populations from Kooyer et al. (2017) and <i>M. moschatus</i> populations from present study.
 
 &emsp;&emsp;&ensp; File 4: "Kooyers_et_al_2017_simplified.csv" \
-&emsp;&emsp;&ensp;&ensp; Description: 
+&emsp;&emsp;&ensp;&ensp; Description: Simplified dataset of raw total and individual PPG concentrations of <i>Mimulus guttatus</i> samples from populations included in this study.
 
 
 #### DATA SPECIFIC INFORMATION FOR: "Musky_PPG_conc.csv"
@@ -71,6 +71,7 @@ This README_OGPV.txt file was generated on 2025-06-28 by Simon Innes.
 &ensp; none
 
 5. Specialized formats or other abbreviations used: \
+&ensp; PPG: Phenylpropanoid glycoside \
 &ensp; Calc A: Calceolarioside A \
 &ensp; Conand: Conandroside \
 &ensp; Verb: Verbascoside \
@@ -98,6 +99,7 @@ This README_OGPV.txt file was generated on 2025-06-28 by Simon Innes.
 &ensp; none
 
 5. Specialized formats or other abbreviations used: \
+&ensp; PPG: Phenylpropanoid glycoside \
 &ensp; pop: Population \
 &ensp; num: Number \
 &ensp; m: Meter
