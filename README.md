@@ -38,10 +38,12 @@ This README_OGPV.txt file was generated on 2025-06-28 by Simon Innes.
 &emsp;&emsp;&ensp;&ensp; Description: Geographic locations and climate variables for sampled <i>Mimulus moschatus</i> populations.
 
 &emsp;&emsp;&ensp; File 3: "mos_gutt_pops.csv" \
-&emsp;&emsp;&ensp;&ensp; Description: Geographic locations of <i>Mimulus guttatus</i> populations from Kooyer et al. (2017) and <i>M. moschatus</i> populations from present study.
+&emsp;&emsp;&ensp;&ensp; Description: Geographic locations of <i>Mimulus guttatus</i> populations from Kooyer et al. (2017) and \
+&emsp;&emsp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; <i>M. moschatus</i> populations from present study.
 
 &emsp;&emsp;&ensp; File 4: "Kooyers_et_al_2017_simplified.csv" \
-&emsp;&emsp;&ensp;&ensp; Description: Simplified dataset of raw total and individual PPG concentrations of <i>Mimulus guttatus</i> samples from populations included in this study.
+&emsp;&emsp;&ensp;&ensp; Description: Simplified dataset of raw total and individual PPG concentrations of <i>Mimulus guttatus</i> samples \
+&emsp;&emsp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; from populations included in this study.
 
 
 #### DATA SPECIFIC INFORMATION FOR: "Musky_PPG_conc.csv"
