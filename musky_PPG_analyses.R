@@ -103,7 +103,7 @@ chem_env <- chems %>%
   separate(`Sample Name`, c("pop_num", "ind", "rep", "leaf_pair")) %>% 
   unite("ID", c("pop_num", "ind", "rep"), remove = FALSE) %>% 
   left_join(., musky_monk_master %>% 
-              filter(pop_name %in% c("CJC", "SRN", "TAB")) %>% 
+              # filter(pop_name %in% c("CJC", "SRN", "TAB")) %>% 
               select( pop_name:range), by = "pop_num")
 
 
@@ -997,7 +997,7 @@ ggplot(NMDS_sum, aes(x = NMDS1, y = NMDS2)) +
                   size = 5, point.padding = 1.5) 
 
 
-#### get table of how much variance is explained for each NMDS axis (Table S3) ####
+#### Table of how much variance is explained for each NMDS axis (Table S3) ####
 
 # Define the desired order of PPGs
 PPG_order_TableS3 <- c("Calc A",
@@ -1031,16 +1031,10 @@ write_csv(NMDS_sum, file = "PPGs/for_manuscript/PPG_NMDS_var_TableS3.csv")
 
 #### table with geographic locations and environmental variables for mos and gutt (Table S4) ####
 
-PPG_mos_gutt_env <- read_csv("PPGs/for_manuscript/musky_monk_env.csv") %>% 
-  mutate(pop_num = as.character(pop_num)) %>% 
-  mutate(species = case_when(pop_name %in% c("CJC", "SRN", "TAB") ~ "mos",
-                             pop_name %in% c("NAD", "YVO", "HAC") ~ "gutt")) %>% 
-  relocate(species, .after = range)
+PPG_mos_env <- read_csv("PPGs/for_manuscript/musky_monk_env.csv") %>% 
+  mutate(pop_num = as.character(pop_num)) 
 
-write_csv(PPG_mos_gutt_env, file = "PPGs/for_manuscript/PPG_mos_gutt_env_TableS4.csv")
-
-
-#####
+write_csv(PPG_mos_env, file = "PPGs/for_manuscript/PPG_mos_env_TableS4.csv")
 
 
 
