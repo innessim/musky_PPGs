@@ -121,7 +121,7 @@ This README_OGPV.txt file was generated on 2025-06-28 by Simon Innes.
 
 6. Specialized formats or other abbreviations used: \
 &ensp; pop: Population \
-&ensp; m: Meter
+&ensp; m: Meter \
 &ensp; mos: <i>Mimulus moschatus</i> \
 &ensp; gutt: <i>Mimulus guttatus</i>
 
