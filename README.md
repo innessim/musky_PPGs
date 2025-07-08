@@ -135,7 +135,7 @@ This README_OGPV.txt file was generated on 2025-06-28 by Simon Innes.
 &ensp; latitude: \
 &ensp; longitude: \
 &ensp; elevation_m: \
-&ensp; species: Categorical variable descirbing the species identity (mos = <i>M. moschatus</i>, gutt = <i>M. guttatus<i>; two levels)
+&ensp; species: Categorical variable descirbing the species identity (mos = <i>M. moschatus</i>, gutt = <i>M. guttatus</i>; two levels)
 
 5. Missing data codes: \
 &ensp; none
