@@ -95,7 +95,7 @@ This README_OGPV.txt file was generated on 2025-06-28 by Simon Innes.
 &ensp; latitude: Latitudinal coordinates of population in decimal degrees \
 &ensp; longitude: Longitudinal coordinates of population in decimal degrees \
 &ensp; elevation_m: Elevation of population in meters \
-&ensp; range: Categorical variable describing where a population was sampled (three levels) \
+&ensp; range: Categorical variable describing the region where a population was sampled (three levels) \
 &ensp; MAT: Mean annual temperature in °C (historical normal from 1991–2020) \
 &ensp; MAP: Mean annual precipitation in millimeters (historical normal from 1991–2020) \
 &ensp; AHM: Annual head moisture index (historical normal from 1991–2020) \
@@ -169,7 +169,7 @@ This README_OGPV.txt file was generated on 2025-06-28 by Simon Innes.
 &ensp; longitude: Longitudinal coordinates of population in decimal degrees \
 &ensp; elevation_m: Elevation in meters \
 &ensp; species: Categorical variable descirbing the species identity (gutt; one level) \
-&ensp; range: Categorical variable describing where a population was sampled (Sequoia, Sierra, Willamette; three levels)
+&ensp; range: Categorical variable describing the region where a population was sampled (three levels)
 
 
 5. Missing data codes: \
