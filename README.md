@@ -132,10 +132,10 @@ This README_OGPV.txt file was generated on 2025-06-28 by Simon Innes.
 
 3. Variable List: \
 &ensp; pop_name: Unique population name \
-&ensp; latitude: \
-&ensp; longitude: \
-&ensp; elevation_m: \
-&ensp; species: Categorical variable descirbing the species identity (mos = <i>M. moschatus</i>, gutt = <i>M. guttatus</i>; two levels)
+&ensp; latitude: Latitudinal coordinates of population in decimal degrees \
+&ensp; longitude: Longitudinal coordinates of population in decimal degrees \
+&ensp; elevation_m: Elevation of population in meters \
+&ensp; species: Categorical variable descirbing the species identity (mos vs. gutt; two levels)
 
 5. Missing data codes: \
 &ensp; none
@@ -154,22 +154,22 @@ This README_OGPV.txt file was generated on 2025-06-28 by Simon Innes.
 2. Number of cases/rows: 23
 
 3. Variable List: \
-&ensp; pop_name: \
-&ensp; ind: \
-&ensp; rep: \
-&ensp; Unkn 10: \
-&ensp; Calc A: \
-&ensp; Conand: \
-&ensp; Verb: \
-&ensp; Calc B: \
-&ensp; Mimulo: \
-&ensp; Unkn 16: \
-&ensp; Total PPGs: \
-&ensp; latitude: \
-&ensp; longitude: \
-&ensp; elevation_m: \
-&ensp; species: \
-&ensp; range:
+&ensp; pop_name: Unique population name \
+&ensp; ind: Unique indentifer corresponding to a maternal line within a population \
+&ensp; rep: Unique identifier corresponding to a replicate within a maternal line \
+&ensp; Unkn 10: Concentration of unknown PPG 10 \
+&ensp; Calc A: Concentration of calceolarioside A \
+&ensp; Conand: Concentration of conandroside \
+&ensp; Verb: Concentration of verbascoside \
+&ensp; Calc B: Concentration of calceolarioside B \
+&ensp; Mimulo: Concentration of mimuloside \
+&ensp; Unkn 16: Concentration of unknown PPG 16 \
+&ensp; Total PPGs: Concentration of total PPGs \
+&ensp; latitude: Latitudinal coordinates of population in decimal degrees \
+&ensp; longitude: Longitudinal coordinates of population in decimal degrees \
+&ensp; elevation_m: Elevation in meters \
+&ensp; species: Categorical variable descirbing the species identity (gutt; one level) \
+&ensp; range: Categorical variable describing where a population was sampled (Sequoia, Sierra, Willamette; three levels)
 
 
 5. Missing data codes: \
@@ -187,6 +187,5 @@ This README_OGPV.txt file was generated on 2025-06-28 by Simon Innes.
 &ensp; Unkn 16: Unkown phenylpropanoid glycoside 16 \
 &ensp; PPGs: Phenylpropanoid glycosides \
 &ensp; m: Meter \
-&ensp; mos: <i>Mimulus moschatus</i> \
 &ensp; gutt: <i>Mimulus guttatus</i>
 
