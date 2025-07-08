@@ -53,21 +53,21 @@ This README_OGPV.txt file was generated on 2025-06-28 by Simon Innes.
 2. Number of cases/rows: 48
 
 3. Variable List: \
-&ensp; Sample Name: \
-&ensp; PPG b: \
-&ensp; PPG c: \
-&ensp; PPG d: \
-&ensp; PPG e: \
-&ensp; PPG f: \
-&ensp; PPG g: \
-&ensp; PPG h: \
-&ensp; Calc A: \
-&ensp; Conand: \
-&ensp; Verb: \
-&ensp; Calc B: \
-&ensp; Mimulo: \
-&ensp; Unkn 16: \
-&ensp; Total PPGs:
+&ensp; Sample Name: Sample specific identification number \
+&ensp; PPG b: Concentration of PPG b \
+&ensp; PPG c: Concentration of PPG c \
+&ensp; PPG d: Concentration of PPG d \
+&ensp; PPG e: Concentration of PPG e \
+&ensp; PPG f: Concentration of PPG f \
+&ensp; PPG g: Concentration of PPG g \
+&ensp; PPG h: Concentration of PPG h \
+&ensp; Calc A: Concentration of calceolarioside A \
+&ensp; Conand: Concentration of conandroside \
+&ensp; Verb: Concentration of verbascoside \
+&ensp; Calc B: Concentration of calceolarioside B \
+&ensp; Mimulo: Concentration of mimuloside \
+&ensp; Unkn 16: Concentration of unknown PPG 16 \
+&ensp; Total PPGs: Concentration of total PPGs
 
 4. Missing data codes: \
 &ensp; none
@@ -85,26 +85,43 @@ This README_OGPV.txt file was generated on 2025-06-28 by Simon Innes.
 
 #### DATA SPECIFIC INFORMATION FOR: "musky_monk_env.csv"
 
-1. Number of variables: 6
+1. Number of variables: 13
 
 2. Number of cases/rows: 3
 
 3. Variable List: \
-&ensp; pop_name: \
-&ensp; pop_num: \
-&ensp; latitude: \
-&ensp; longitude: \
-&ensp; elevation_m: \
-&ensp; range: 
+&ensp; pop_name: Unique population name \
+&ensp; pop_num: Unique population number \
+&ensp; latitude: Latitudinal coordinates of population in decimal degrees \
+&ensp; longitude: Longitudinal coordinates of population in decimal degrees \
+&ensp; elevation_m: Elevation of population in meters \
+&ensp; range: Regional descriptor of where population was sampled \
+&ensp; MAT: Mean annual temperature in °C (historical normal from 1991–2020) \
+&ensp; MAP: Mean annual precipitation in millimeters (historical normal from 1991–2020) \
+&ensp; AHM: Annual head moisture index (historical normal from 1991–2020) \
+&ensp; PAS: Precipitation as snow in millimeters (historical normal from 1991–2020) \
+&ensp; SHM: Summer heat-moisture index (historical normal from 1991–2020) \
+&ensp; FFP: Frost-free period (historical normal from 1991–2020) \
+&ensp; DD5: Degree-days above 5°C (historical normal from 1991–2020)
 
-4. Missing data codes: \
+5. Missing data codes: \
 &ensp; none
 
-5. Specialized formats or other abbreviations used: \
+6. Specialized formats or other abbreviations used: \
 &ensp; PPG: Phenylpropanoid glycoside \
 &ensp; pop: Population \
 &ensp; num: Number \
-&ensp; m: Meter
+&ensp; m: Meter \
+&ensp; MAT: Mean annual temperature (°C) \
+&ensp; MAP: Mean annual precipitation (mm) \
+&ensp; AHM: Annual heat-moisture index ([MAT+10]/[MAP/1000]) \
+&ensp; PAS: Precipitation as snow (mm) between August in the previous year and July in the current year \
+&ensp; SHM: Summer heat-moisture index (MWMT/[MSP/1000])\
+&ensp; FFP: Frost-free period \
+&ensp; DD5: Degree-days above 5°C, growing degree-days \
+&ensp; MWMT: Mean warmest month temperature (°C) \
+&ensp; MSP: Mean annual summer (May to September) precipitation (mm) \
+&ensp; mm: millimeter
 
 
 #### DATA SPECIFIC INFORMATION FOR: "mos_gutt_pops.csv"
