@@ -95,7 +95,7 @@ This README_OGPV.txt file was generated on 2025-06-28 by Simon Innes.
 &ensp; latitude: Latitudinal coordinates of population in decimal degrees \
 &ensp; longitude: Longitudinal coordinates of population in decimal degrees \
 &ensp; elevation_m: Elevation of population in meters \
-&ensp; range: Regional descriptor of where population was sampled \
+&ensp; range: Categorical variable describing where a population was sampled (three levels) \
 &ensp; MAT: Mean annual temperature in °C (historical normal from 1991–2020) \
 &ensp; MAP: Mean annual precipitation in millimeters (historical normal from 1991–2020) \
 &ensp; AHM: Annual head moisture index (historical normal from 1991–2020) \
@@ -131,11 +131,11 @@ This README_OGPV.txt file was generated on 2025-06-28 by Simon Innes.
 2. Number of cases/rows: 38
 
 3. Variable List: \
-&ensp; pop_name: \
+&ensp; pop_name: Unique population name \
 &ensp; latitude: \
 &ensp; longitude: \
 &ensp; elevation_m: \
-&ensp; species: 
+&ensp; species: Categorical variable descirbing the species identity (mos = <i>M. moschatus</i>, gutt = <i>M. guttatus<i>; two levels)
 
 5. Missing data codes: \
 &ensp; none
