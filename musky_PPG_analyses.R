@@ -265,19 +265,19 @@ chem_df %>%
 mos_gutt_pops <- read_csv("PPGs/for_manuscript/mos_gutt_PPG_pops.csv")
 
 
-# Step 1: Separate the *mos* and *gutt* populations
+# Separate the *mos* and *gutt* populations
 mos_pops <- mos_gutt_pops %>% filter(species == "mos")
 gutt_pops <- mos_gutt_pops %>% filter(species == "gutt")
 
-# Step 2: Create a matrix of coordinates for each group
+# Create a matrix of coordinates for each group
 mos_coords <- mos_pops %>% select(longitude, latitude) %>% as.matrix()
 gutt_coords <- gutt_pops %>% select(longitude, latitude) %>% as.matrix()
 
-# Step 3: Calculate the distances between each *mos* population and all *gutt* populations
+# Calculate the distances between each *mos* population and all *gutt* populations
 # Each row represents a *gutt* population, and each column represents a *mos* population
 dist_matrix <- distm(gutt_coords, mos_coords, fun = distHaversine)
 
-# Step 4: Find the top 3 closest *gutt* populations for each *mos* population
+# Find the top 3 closest *gutt* populations for each *mos* population
 closest_three_gutt <- data.frame()  # Initialize an empty data frame
 
 # Loop over each column (each `mos` population)
@@ -304,7 +304,7 @@ for (i in 1:ncol(dist_matrix)) {
   closest_three_gutt <- rbind(closest_three_gutt, temp_df)
 }
 
-# Step 5: View results
+# View results
 as_tibble(closest_three_gutt)
 
 # went with HAC for TAB (17.9 km), YVO for SRN (89.7 km) and NAD for CJC (53.1 km)
@@ -396,7 +396,7 @@ group_by(pop_name) %>%
   ungroup() %>%
   mutate(species = "gutt")
 
-# remove later leaves and remove unecessary columns
+# remove later leaves and unnecessary columns
 filtered_mos_PPG_raw <- chem_df %>%
   filter(leaf_pair == 3) %>%
   select(-ID, -pop_num, -ind, -rep, -leaf_pair)
