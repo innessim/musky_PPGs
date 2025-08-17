@@ -8,7 +8,7 @@ This README_OGPV.txt file was generated on 2025-06-28 by Simon Innes.
 
 1. Title of Dataset: “Data for: Ontogenetic and geographic phytochemical variation in <i>Mimulus moschatus</i>, a perennial monkeyflower.”
 
-2. Author Information \
+2. Author Information: \
 &ensp; Corresponding author \
 &emsp; Name: Simon Innes \
 &emsp; Institution: University of Louisiana at Lafayette \
