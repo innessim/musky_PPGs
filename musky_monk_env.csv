@@ -1,4 +1,4 @@
-pop_name,pop_num,latitude,longitude,elevation_m,range,MAT,MAP,AHM,PAS,SHM,FFP,DD5
-CJC,201,35.74535,-118.55546,1807.464,Sequoia,10.7,814,25.4,44,356.6,169,2392
-SRN,206,37.03416,-119.22023,1231.6968,Sierra,13.3,895,26,14,376.1,214,3128
-TAB,195,44.2337,-122.108,1439.5704,Willamette,7.9,2296,7.8,219,41.5,146,1583
+pop_name,pop_num,latitude,longitude,elevation_m,range
+CJC,201,35.74535,-118.55546,1807.464,Sequoia
+SRN,206,37.03416,-119.22023,1231.6968,Sierra
+TAB,195,44.2337,-122.108,1439.5704,Willamette
