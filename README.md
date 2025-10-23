@@ -85,7 +85,7 @@ This README_OGPV.txt file was generated on 2025-06-28 by Simon Innes.
 
 #### DATA SPECIFIC INFORMATION FOR: "musky_monk_env.csv"
 
-1. Number of variables: 13
+1. Number of variables: 6
 
 2. Number of cases/rows: 3
 
