@@ -35,7 +35,7 @@ This README_OGPV.txt file was generated on 2025-06-28 by Simon Innes.
 &emsp; Description: Raw data of total and individual PPG concentrations for each <i>Mimulus moschatus</i> sample.
 
 &emsp;&emsp;&ensp; File 2: "musky_monk_env.csv" \
-&emsp;&emsp;&ensp;&ensp; Description: Geographic locations and climate variables for sampled <i>Mimulus moschatus</i> populations.
+&emsp;&emsp;&ensp;&ensp; Description: Geographic locations and metadata for sampled <i>Mimulus moschatus</i> populations.
 
 &emsp;&emsp;&ensp; File 3: "mos_gutt_pops.csv" \
 &emsp;&emsp;&ensp;&ensp; Description: Geographic locations of <i>Mimulus guttatus</i> populations from Kooyer et al. (2017) and \
@@ -96,32 +96,15 @@ This README_OGPV.txt file was generated on 2025-06-28 by Simon Innes.
 &ensp; longitude: Longitudinal coordinates of population in decimal degrees \
 &ensp; elevation_m: Elevation of population in meters \
 &ensp; range: Categorical variable describing the region where a population was sampled (three levels) \
-&ensp; MAT: Mean annual temperature in °C (historical normal from 1991–2020) \
-&ensp; MAP: Mean annual precipitation in millimeters (historical normal from 1991–2020) \
-&ensp; AHM: Annual head moisture index (historical normal from 1991–2020) \
-&ensp; PAS: Precipitation as snow in millimeters (historical normal from 1991–2020) \
-&ensp; SHM: Summer heat-moisture index (historical normal from 1991–2020) \
-&ensp; FFP: Frost-free period (historical normal from 1991–2020) \
-&ensp; DD5: Degree-days above 5°C (historical normal from 1991–2020)
 
-5. Missing data codes: \
+4. Missing data codes: \
 &ensp; none
 
-6. Specialized formats or other abbreviations used: \
+5. Specialized formats or other abbreviations used: \
 &ensp; PPG: Phenylpropanoid glycoside \
 &ensp; pop: Population \
 &ensp; num: Number \
-&ensp; m: Meter \
-&ensp; MAT: Mean annual temperature (°C) \
-&ensp; MAP: Mean annual precipitation (mm) \
-&ensp; AHM: Annual heat-moisture index ([MAT+10]/[MAP/1000]) \
-&ensp; PAS: Precipitation as snow (mm) between August in the previous year and July in the current year \
-&ensp; SHM: Summer heat-moisture index (MWMT/[MSP/1000])\
-&ensp; FFP: Frost-free period \
-&ensp; DD5: Degree-days above 5°C, growing degree-days \
-&ensp; MWMT: Mean warmest month temperature (°C) \
-&ensp; MSP: Mean annual summer (May to September) precipitation (mm) \
-&ensp; mm: millimeter
+&ensp; m: Meter 
 
 
 #### DATA SPECIFIC INFORMATION FOR: "mos_gutt_pops.csv"
