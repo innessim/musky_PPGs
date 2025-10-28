@@ -37,7 +37,7 @@ This README_OGPV.txt file was generated on 2025-06-28 by Simon Innes.
 &emsp;&emsp;&ensp; File 2: "musky_monk_env.csv" \
 &emsp;&emsp;&ensp;&ensp; Description: Geographic locations and metadata for sampled <i>Mimulus moschatus</i> populations.
 
-&emsp;&emsp;&ensp; File 3: "mos_gutt_pops.csv" \
+&emsp;&emsp;&ensp; File 3: "mos_gutt_PPG_pops.csv" \
 &emsp;&emsp;&ensp;&ensp; Description: Geographic locations of <i>Mimulus guttatus</i> populations from Kooyer et al. (2017) and \
 &emsp;&emsp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; <i>M. moschatus</i> populations from present study.
 
@@ -119,7 +119,7 @@ This README_OGPV.txt file was generated on 2025-06-28 by Simon Innes.
 &ensp; m: Meter 
 
 
-#### DATA SPECIFIC INFORMATION FOR: "mos_gutt_pops.csv"
+#### DATA SPECIFIC INFORMATION FOR: "mos_gutt_PPG_pops.csv"
 
 1. Number of variables: 5
 
