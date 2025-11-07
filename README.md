@@ -26,7 +26,9 @@ This README_OGPV.txt file was generated on 2025-06-28 by Simon Innes.
 
 4. Geographic location of data collection: see musky_monk_env.csv & Kooyers_et_al_2017_simplified.csv
 
-5. Funding: This work was funded by a National Science Foundation CAREER grant (DEB-2045643) awarded to NJK.
+5. Unit of measure for concentrations: Individual and total PPG concentrations are calculated as milligrams of compound per gram of dry leaf tissue. 
+
+6. Funding: This work was funded by a National Science Foundation CAREER grant (DEB-2045643) awarded to NJK.
 
 ### DATA AND FILE OVERVIEW
 
